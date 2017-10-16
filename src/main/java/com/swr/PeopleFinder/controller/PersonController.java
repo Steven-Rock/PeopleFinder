@@ -18,6 +18,16 @@ public class PersonController {
         this.repository = repository;
     }
 
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    @ResponseBody
+    public Person hello(){
+
+        System.out.println("Hello");
+
+        Person p = new Person("Hello", "Hello", new Date() , "Hello@gmail.com");
+        return p;
+    }
+
     @RequestMapping(value="/people", method=RequestMethod.GET)
     @ResponseBody
     public Iterable<Person> getCustomers(){
