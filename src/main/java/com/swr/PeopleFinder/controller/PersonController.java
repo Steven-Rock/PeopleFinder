@@ -4,6 +4,7 @@ import com.swr.PeopleFinder.model.Person;
 import com.swr.PeopleFinder.repo.PersonRepository;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -60,10 +61,14 @@ public class PersonController {
         }
         else{
             System.out.println("Did not find user");
-            throw new NotFoundException("Not able to find user with id = " + id);
+            throw new ResourceNotFoundException();
         }
 
         return p2;
     }
 
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public class ResourceNotFoundException extends RuntimeException {
+
+    }
 }
