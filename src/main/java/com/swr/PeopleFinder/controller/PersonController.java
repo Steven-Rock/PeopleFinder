@@ -2,6 +2,7 @@ package com.swr.PeopleFinder.controller;
 
 import com.swr.PeopleFinder.model.Person;
 import com.swr.PeopleFinder.repo.PersonRepository;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,7 +51,7 @@ public class PersonController {
     }
 
     @RequestMapping(value="/person/{id}", method=RequestMethod.GET)
-    public Person getPerson(@PathVariable long id){
+    public Person getPerson(@PathVariable long id) throws NotFoundException {
         System.out.println("Searching for user id " + id);
 
         Person p2 = repository.findOne(id);
@@ -59,6 +60,7 @@ public class PersonController {
         }
         else{
             System.out.println("Did not find user");
+            throw new NotFoundException("Not able to find user with id = " + id);
         }
 
         return p2;
