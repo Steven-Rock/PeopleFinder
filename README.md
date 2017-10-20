@@ -34,7 +34,7 @@ There was an unexpected error (type=Not Found, status=404).
 
 ## TODO:
 
-- [x] Add form to create new users
+- [ ] Add form to create new users
 - [ ] Add login security
 - [ ] Add table view to show all persons in the DB
 - [ ] Add delete
