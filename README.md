@@ -32,10 +32,10 @@ https://polar-woodland-58667.herokuapp.com/person/10
 - use id not in the database, i.e. user not found throws 404
 There was an unexpected error (type=Not Found, status=404).
 
-## Enhancements (To Add):
+## TODO:
 
-- [] Add form to create new users
-- [] Add login security
-- [] Add table view to show all persons in the DB
-- [] Add delete
-- [] Use React for front end?
+- [x] Add form to create new users
+- [ ] Add login security
+- [ ] Add table view to show all persons in the DB
+- [ ] Add delete
+- [ ] Use React for front end?
